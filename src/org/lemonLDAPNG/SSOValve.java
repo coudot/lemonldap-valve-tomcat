@@ -90,8 +90,7 @@ public class SSOValve extends ValveBase {
 						roles.add(role);
 				}
 				if (user != null) {
-					request.setUserPrincipal(new GenericPrincipal(this
-							.getContainer().getRealm(), user, "", roles));
+					request.setUserPrincipal(new GenericPrincipal(user, "", roles));
 				} else if (!passThrough) {
 					if (log.isDebugEnabled())
 						log.debug("PassThrough disable, send 403 error");
